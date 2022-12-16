@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Drum Machine</title>
+    <script>      
+      window.document.onkeyup = function(event) {
+        let keyPressed = event.key
+
+        if (keyPressed === 'q' || keyPressed === 'Q') {
+            play('Q');
+        } else if (keyPressed === 'w' || keyPressed === 'W') {
+            play('W');
+        } else if (keyPressed === 'e' || keyPressed === 'E') {
+            play('E');
+        } else if (keyPressed === 'a' || keyPressed === 'A') {
+            play('A');
+        } else if (keyPressed === 's' || keyPressed === 'S') {
+            play('S');
+        } else if (keyPressed === 'd' || keyPressed === 'D') {
+            play('D');
+        } else if (keyPressed === 'z' || keyPressed === 'Z') {
+            play('Z');
+        } else if (keyPressed === 'x' || keyPressed === 'X') {
+            play('X');
+        } else if (keyPressed === 'c' || keyPressed === 'C') {
+            play('C');
+    }};
+
+    function play(str) {
+        if (str === 'q' || str === 'Q') {
+            document.getElementById('display').innerHTML = "Heater 1";
+        } else if (str === 'w' || str === 'W') {
+            document.getElementById('display').innerHTML = "Heater 2";
+        } else if (str === 'e' || str === 'E') {
+            document.getElementById('display').innerHTML = "Heater 3";
+        } else if (str === 'a' || str === 'A') {
+            document.getElementById('display').innerHTML = "Heater 4";
+        } else if (str === 's' || str === 'S') {
+            document.getElementById('display').innerHTML = "Clap";
+        } else if (str === 'd' || str === 'D') {
+            document.getElementById('display').innerHTML = "Open-HH";
+        } else if (str === 'z' || str === 'Z') {
+            document.getElementById('display').innerHTML = "Kick-n'-Hat";
+        } else if (str === 'x' || str === 'X') {
+            document.getElementById('display').innerHTML = "Kick";
+        } else if (str === 'c' || str === 'C') {
+            document.getElementById('display').innerHTML = "Closed-HH";
+        }
+       
+        var audio = document.getElementById(str);
+        audio.play();
+    }
+    </script>
+
+  </head>
+
+  <body>
+    <div class="container" id="drum-machine">
+      <h1 class="text-center">Drum Machine by K A R I</h1>
+      <div class="card my-3">
+        <div class="card-body">
+            <div class="text-center" id="display">PRESS A BUTTON</div>
+        </div>
+      </div>
+      
+    <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-1" onClick="play('Q')">
+                <strong>Q</strong>
+                <audio src="./mp3/Heater-1.mp3" class="clip" id="Q">
+              </button>
+          </div>
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-2" onClick="play('W')">
+                <strong>W</strong>
+                <audio src="./mp3/Heater-2.mp3" class="clip" id="W">
+              </button>
+          </div>
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-3" onClick="play('E')">
+                <strong>E</strong>
+                <audio src="./mp3/Heater-3.mp3" class="clip" id="E">
+              </button>
+          </div>
+        </div>
+        <br>
+        <div class="row align-items-center">
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-4" onClick="play('A')">
+                <strong>A</strong>
+                <audio src="./mp3/Heater-4_1.mp3" class="clip" id="A">
+              </button>
+          </div>
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-5" onClick="play('S')">
+                <strong>S</strong>
+                <audio src="./mp3/Heater-6.mp3" class="clip" id="S">
+              </button>
+          </div>
+          <div class="col">
+              <button class="drum-pad btn btn-block btn-warning" id="drum-6" onClick="play('D')">
+                <strong>D</strong>
+                <audio src="./mp3/Dsc_Oh.mp3" class="clip" id="D">
+              </button>
+          </div>
+        </div>
+        <br>
+        <div class="row align-items-end">
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-7" onClick="play('Z')">
+                <strong>Z</strong>
+                <audio src="./mp3/Kick_n_Hat.mp3" class="clip" id="Z">
+              </button>
+          </div>
+          <div class="col">
+            <button class="drum-pad btn btn-block btn-warning" id="drum-8" onClick="play('X')">
+                <strong>X</strong>
+            <audio src="./mp3/RP4_KICK_1.mp3" class="clip" id="X">
+          </button>
+          </div>
+          <div class="col">
+              <button class="drum-pad btn btn-block btn-warning" id="drum-9" onClick="play('C')">
+                <strong>C</strong>
+                <audio src="./mp3/Cev_H2.mp3" class="clip" id="C">
+              </button>
+          </div>
+        </div>
+      </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
